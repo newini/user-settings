@@ -22,7 +22,7 @@
 ##
 # ROOT
 ##
-    source /opt/root/root-6.08.06-build/bin/thisroot.sh
+    source /opt/root/root-6.12.04-build/bin/thisroot.sh
 
 ##
 # GEANT4

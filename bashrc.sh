@@ -15,7 +15,7 @@
     [[ -n "$VIMRUNTIME" ]] && PS1="(VIM) :\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\W\[\033[m\]\$ "
 
 ##
-# Xming X Server DISPLAY
+# Xming X Server DISPLAY (only for windows)
 ##
     export DISPLAY=localhost:0.0
 

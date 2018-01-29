@@ -38,7 +38,7 @@
 ##
 # set -o vi
 ##
-    set -o vi
+#    set -o vi
 
 ##
 # OPEN

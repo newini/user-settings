@@ -25,11 +25,6 @@
     source /opt/root/root-6.12.04-build/bin/thisroot.sh
 
 ##
-# GEANT4
-##
-    source /opt/geant4/geant4.10.03.p01-install/bin/geant4.sh
-
-##
 # Change Directory
 ##
     alias onedrive="cd /mnt/c/Users/eckim/OneDrive/workspace"

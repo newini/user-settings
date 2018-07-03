@@ -15,25 +15,9 @@
     [[ -n "$VIMRUNTIME" ]] && PS1="(VIM) :\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\W\[\033[m\]\$ "
 
 ##
-# Xming X Server DISPLAY (only for windows)
-##
-    export DISPLAY=localhost:0.0
-
-##
 # ROOT
 ##
     source /opt/root/root-6.12.04-build/bin/thisroot.sh
-
-##
-# Change Directory
-##
-    alias onedrive="cd /mnt/c/Users/eckim/OneDrive/workspace"
-    alias itk='cd /mnt/c/Users/eckim/Desktop/itk/'
-
-##
-# mkdir option
-##
-    alias mkdir='mkdir -m 755'
 
 ##
 # set -o vi
@@ -41,12 +25,7 @@
 #    set -o vi
 
 ##
-# OPEN
-##
-    alias open='xdg-open'
-
-##
-# ssh 
+# ssh setup
 ##
     source $HOME/.ssh/ssh.sh
 
@@ -54,3 +33,13 @@
 # default editor
 ##
     export EDITOR='vim'
+
+##
+# faster ssh X11 forwarding
+##
+    alias ssh='ssh -XC -c blowfish-cbc,arcfour'
+
+##
+# setting for windows subsystem for linux
+##
+    source $HOME/user-settings/wsl.sh

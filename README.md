@@ -2,16 +2,16 @@
 
 ## Contents
 
-* **bashrc.sh** - for bash shell
-add line below to .bashrc
-```
-source $HOME/user-settings/bashrc.sh
-```
+* **bashrc** - for bash shell
 
-* **vimrc.vim** - for vim
-add line below to .vimrc
-```
-source $HOME/user-settings/vimrc.vim
-```
+* **vimrc**, **vim/after/syntax/cpp.vim** - for vim
 
+* **latexmkrc** - for latexmk
 
+## Usage
+Type below
+```
+source setup.sh
+```
+It will add line into **.bashrc**, **.vimrc**, **.vim/after/syntax/cpp.vim**, 
+and copy **latexrc** to **.latexmkrc**

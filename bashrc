@@ -20,11 +20,6 @@
     source /opt/root/root-6.12.04-build/bin/thisroot.sh
 
 ##
-# set -o vi
-##
-#    set -o vi
-
-##
 # ssh setup
 ##
     source $HOME/.ssh/ssh.sh
@@ -43,3 +38,8 @@
 # setting for windows subsystem for linux
 ##
     source $HOME/user-settings/wsl.sh
+
+##
+# Git aliases
+##
+    source $HOME/user-settings/git_aliases.sh

@@ -3,6 +3,8 @@
 ## Contents
 
 * **bashrc** - for bash shell
+  1. **wsl.sh** - for windows subsystem linux
+  2. **git_aliase.sh** - for Git aliases
 
 * **vimrc**, **vim/after/syntax/cpp.vim** - for vim
 

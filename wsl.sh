@@ -10,6 +10,7 @@
 ##
     alias onedrive="cd /mnt/c/Users/eckim/OneDrive/workspace"
     alias itk='cd /mnt/c/Users/eckim/Desktop/itk/'
+    alias my-thesis='cd /mnt/c/Users/eckim/OneDrive/Docu/Work/JLAB/Master/thesis'
 
 ##
 # mkdir option
@@ -25,5 +26,4 @@
 # audio 
 ##
     export PULSE_SERVER=tcp:localhost
-
 

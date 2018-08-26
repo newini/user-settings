@@ -12,17 +12,7 @@
 ##
 # go shell from vim 
 ##
-    [[ -n "$VIMRUNTIME" ]] && PS1="(VIM) :\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\W\[\033[m\]\$ "
-
-##
-# ROOT
-##
-    source /opt/root/root-6.12.04-build/bin/thisroot.sh
-
-##
-# ssh setup
-##
-    source $HOME/.ssh/ssh.sh
+    [[ -n "$VIMRUNTIME" ]] && PS1="(VIM): \[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\W\[\033[m\]\$ "
 
 ##
 # default editor
@@ -35,11 +25,21 @@
     alias ssh='ssh -XC -c blowfish-cbc,arcfour'
 
 ##
-# setting for windows subsystem for linux
-##
-    source $HOME/user-settings/wsl.sh
-
-##
 # Git aliases
 ##
     source $HOME/user-settings/git_aliases.sh
+
+##
+# ROOT
+##
+    source /opt/root/root-6.14.02-build/bin/thisroot.sh
+
+##
+# ssh setup
+##
+    source $HOME/.ssh/ssh.sh
+
+##
+# setting for windows subsystem for linux
+##
+    source $HOME/user-settings/wsl.sh

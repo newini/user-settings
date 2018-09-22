@@ -2,6 +2,9 @@
 #
 # Type "source setup.sh" on "user-settings" dir!
 #
+# Created by Eunchong Kim, 2018
+#
+
 dirctory_name=user-settings
 
 # bashrc

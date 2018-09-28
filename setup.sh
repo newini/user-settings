@@ -11,7 +11,6 @@ dirctory_name=user-settings
 echo "" >> ../.bashrc
 echo "##" >> ../.bashrc
 echo "# bashrc user setting" >> ../.bashrc
-echo "##" >> ../.bashrc
 echo "    source \$HOME/$dirctory_name/bashrc" >> ../.bashrc
 echo "" >> ../.bashrc
 

@@ -18,17 +18,12 @@
 
 ##
 # Faster ssh X11 forwarding
-    #alias ssh='ssh -XC -c blowfish-cbc,arcfour' # Disabled OpenSSH > 6.7
-    #alias ssh='ssh -XC -c aes128-gcm' # Enabled OpenSSH > 6.2, faster than aes128-ctr
-    alias ssh='ssh -XC -c aes128-ctr'
+    #alias ssh='ssh -XC -c aes128-gcm' # Fastest one, Enabled OpenSSH > 6.2, faster than aes128-ctr
+    alias ssh='ssh -XYC4 -c aes128-ctr'
 
 ##
 # Git aliases
     source $HOME/user-settings/git_aliases.sh
-
-##
-# ROOT
-    #source /opt/root/root-6.14.02-build/bin/thisroot.sh
 
 ##
 # ssh setup

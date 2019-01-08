@@ -26,9 +26,5 @@
     source $HOME/user-settings/git_aliases.sh
 
 ##
-# ssh setup
-    #source $HOME/.ssh/ssh.sh
-
-##
 # setting for windows subsystem for linux
     #source $HOME/user-settings/wsl.sh

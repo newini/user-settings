@@ -1,9 +1,11 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Basic settings
-    set tabstop=2         " The width of a TAB is set to 2
-    set shiftwidth=2      " Indents will have a width of 4
-    set softtabstop=2     " Sets the number of columns for a TAB
+    set tabstop=4         " The width of a TAB is set to 2
+    set shiftwidth=4      " Indents will have a width of 4
+    set softtabstop=4     " Sets the number of columns for a TAB
     set expandtab         " Expand TABs to spaces
+    set list              " (See below)
+    set listchars=tab:>-  " Display tabs as characters
 
     set enc=utf-8
     set fencs=ucs-bom,utf-8,iso-2022-jp,euc-jp,cp932,latin1
@@ -16,6 +18,7 @@
     syntax on           " Color for language
     set background=dark " Dark theme
     set guifont=Lucida_Console\ 16
+"    set foldmethod=syntax  " Syntax folding
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -36,7 +39,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Have Vim jump to the last position when reopening a file
     if has("autocmd")
-      au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+        au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
         \| exe "normal! g'\"" | endif
     endif
 
@@ -82,3 +85,10 @@
     set statusline+=\ [%p%%]\                                             " line X of Y [percent of file]
     "set statusline+=\ Buf:%n                                              " Buffer number
     "set statusline+=\ [%b][0x%B]\                                         " ASCII and byte code under cursor
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugin
+call plug#begin()
+    Plug 'Yggdroot/indentLine' " Display thin vertical lines at each indentation level for code indented with spaces
+call plug#end()

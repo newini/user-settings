@@ -18,9 +18,8 @@ echo "" >> ../.bashrc
 # Vim
 # vim settings
 echo "source \$HOME/$dirctory_name/vimrc" > ../.vimrc
-# vim cpp syntax
-mkdir -p ../.vim/after/syntax
-echo "source \$HOME/$dirctory_name/vim/after/syntax/cpp.vim" > ../.vim/after/syntax/cpp.vim
+# vim cpp syntax & plugin
+cp -r vim ../.vim/.
 
 
 # Latexmk

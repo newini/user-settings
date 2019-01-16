@@ -19,7 +19,7 @@ echo "" >> ../.bashrc
 # vim settings
 echo "source \$HOME/$dirctory_name/vimrc" > ../.vimrc
 # vim cpp syntax & plugin
-cp -r vim ../.vim/.
+cp -rT vim ../.vim
 
 
 # Latexmk

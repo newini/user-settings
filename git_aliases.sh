@@ -1,6 +1,7 @@
 alias gs='git status '
 alias ga='git add '
 alias gb='git branch '
+alias gt='git tag '
 alias gc='git commit'
 alias gd='git diff'
 alias go='git checkout '

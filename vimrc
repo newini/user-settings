@@ -11,6 +11,7 @@
     set fencs=ucs-bom,utf-8,iso-2022-jp,euc-jp,cp932,latin1
 
     set formatoptions-=ro " Disable auto comment out when indent
+    set paste " Disable auto indent when paste
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

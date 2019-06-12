@@ -26,5 +26,10 @@
     source $HOME/user-settings/git_aliases.sh
 
 ##
+# Alias
+    alias py='python3'
+    alias python='python3'
+
+##
 # setting for windows subsystem for linux
     #source $HOME/user-settings/wsl.sh

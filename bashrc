@@ -28,7 +28,6 @@
 ##
 # Alias
     alias py='python3'
-    alias python='python3'
 
 ##
 # setting for windows subsystem for linux

@@ -1,67 +1,69 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"==========================
 " Basic settings
-    set tabstop=4         " The width of a TAB is set to 2
-    set shiftwidth=4      " Indents will have a width of 4
-    set softtabstop=4     " Sets the number of columns for a TAB
-    set expandtab         " Expand TABs to spaces
-    set list              " Display tabs as ^I
-    set listchars=tab:>-  " Display tabs as characters
+"==========================
+    set tabstop=4           " The width of a TAB is set to 2
+    set shiftwidth=4        " Indents will have a width of 4
+    set softtabstop=4       " Sets the number of columns for a TAB
+    set expandtab           " Expand TABs to spaces
+    set autoindent
+    set smartindent         " Auto indent based on syntax
 
-    set enc=utf-8
+    set enc=utf-8           " encode
     set fencs=ucs-bom,utf-8,iso-2022-jp,euc-jp,cp932,latin1
 
-    set formatoptions-=ro " Disable auto comment out when indent
-    "set paste " Disable auto indent when paste
+    set formatoptions-=ro   " Disable auto comment out when indent
 
+"==========================
+" HotKeys settings
+"==========================
+    " Toggle off/on
+    noremap <F4> :set hlsearch! hlsearch?<CR>   " search highlighting
+    noremap <F5> :set number! number?<CR>       " line
+    noremap <F6> :set paste! paste?<CR>         " paste
+    noremap <F7> :IndentLinesToggle<CR>         " indentline
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Appearance settings
-    syntax on           " Color for language
-    set background=dark " Dark theme
-    set guifont=Lucida_Console\ 16
-"    set foldmethod=syntax  " Syntax folding
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" HotKey settings
-    :noremap <F4> :set hlsearch! hlsearch?<CR>  " Press F4 to toggle highlighting on/off, and show current value
-    :noremap <F5> :set number! number?<CR>      " Press F5 to toggle set line number on/off
-    :noremap <F6> :set paste! paste?<CR>        " Press F6 to toggle set paste mode on/off
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Key for split
+    " HotKeys for split
     nnoremap hT <C-W><C-H>
     nnoremap jt <C-W><C-J>
     nnoremap jT <C-W><C-K>
     nnoremap ht <C-W><C-L>
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"==========================
 " Have Vim jump to the last position when reopening a file
+"==========================
     if has("autocmd")
         au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
         \| exe "normal! g'\"" | endif
     endif
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"==========================
 " Search settings
-    set ignorecase  " Ingnore Capital alphabet
+"==========================
+    set ignorecase  " Ingnore capital alphabet
     set hlsearch    " Highlighe
-    set incsearch   " Realtime
+    set incsearch   " Realtime searching
 
+"==========================
+" Appearance settings
+"==========================
+    syntax on           " Color for language
+    set background=dark " Dark theme
+    set guifont=Lucida_Console\ 16
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Tabe bar
+    set list              " Display tabs as ^I
+    set listchars=tab:>-  " Display tabs as characters
+
+"    set foldmethod=syntax  " Syntax folding
+
+    " Tabe bar
     set showtabline=2
-    "hi TabLine      guifg=#333 guibg=#222 gui=none ctermfg=254 ctermbg=238 cterm=none
+    hi TabLine      guifg=#333 guibg=#222 gui=none ctermfg=254 ctermbg=238 cterm=none
     hi TabLineSel   guifg=#666 guibg=#222 gui=bold ctermfg=231 ctermbg=235 cterm=bold
-    "hi TabLineFill  guifg=#999 guibg=#222 gui=none ctermfg=254 ctermbg=238 cterm=none
+    hi TabLineFill  guifg=#999 guibg=#222 gui=none ctermfg=254 ctermbg=238 cterm=none
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"==========================
 " Last Status Line
+"==========================
     set laststatus=2            " set the bottom status bar
     "                           " (0:表示しない、1:2つ以上ウィンドウがある時だけ表示)
 
@@ -87,10 +89,20 @@
     "set statusline+=\ Buf:%n                                              " Buffer number
     "set statusline+=\ [%b][0x%B]\                                         " ASCII and byte code under cursor
 
+"==========================
+" Auto change indent width
+"==========================
+    augroup fileTypeIndent
+        autocmd!
+        autocmd BufNewFile,BufRead *.rb,*.html,*.cxx,*.cpp setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    augroup END
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugin
-call plug#begin()
-    Plug 'Yggdroot/indentLine' " Display thin vertical lines at each indentation level for code indented with spaces
-call plug#end()
-        autocmd Filetype json let g:indentLine_setConceal = 0 " Must disable indentline for JSON file
+"==========================
+" Plugins
+"==========================
+    filetype plugin indent on
+    
+    call plug#begin()
+        Plug 'Yggdroot/indentLine' " Display thin vertical lines at each indentation level for code indented with spaces
+    call plug#end()
+    autocmd Filetype json let g:indentLine_setConceal = 0 " Must disable indentline for JSON file

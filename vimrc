@@ -7,6 +7,7 @@
     set expandtab           " Expand TABs to spaces
     set autoindent
     set smartindent         " Auto indent based on syntax
+    set backspace=indent,eol,start " Fix Backspace and delete problems
 
     set enc=utf-8           " encode
     set fencs=ucs-bom,utf-8,iso-2022-jp,euc-jp,cp932,latin1
@@ -98,10 +99,16 @@
     augroup END
 
 "==========================
+" Automatically removing all trailing whitespace
+" Every time the user issues a :w command, Vim will automatically remove all trailing whitespace before saving
+"==========================
+    autocmd BufWritePre * %s/\s\+$//e
+
+"==========================
 " Plugins
 "==========================
     filetype plugin indent on
-    
+
     call plug#begin()
         Plug 'Yggdroot/indentLine' " Display thin vertical lines at each indentation level for code indented with spaces
     call plug#end()

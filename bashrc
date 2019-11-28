@@ -37,13 +37,17 @@
 # rm, reject some words and confirm to prevent accident
     rm() {
         if [[ $1 == "-rf" || $1 == "-fr" ]]; then
-            if [[ $2 == "./" || $2 == "/" || $2 == "/." || $2 == "." ]]; then
-                echo "YOU USED rm '$@', THINK AGAIN!"
+            if [[ $2 == "/tmp"* ]]; then
+                /bin/rm $@
             else
-                temp=$@
-                read -p "YOU USED 'rm $temp', ARE YOU SURE? "
-                if [[ $REPLY =~ ^[Yy]$ ]]; then
-                    /bin/rm $@
+                if [[ $2 == "./" || $2 == "/" || $2 == "/." || $2 == "." ]]; then
+                    echo "YOU USED rm '$@', THINK AGAIN!"
+                else
+                    temp=$@
+                    read -p "YOU USED 'rm $temp', ARE YOU SURE? "
+                    if [[ $REPLY =~ ^[Yy]$ ]]; then
+                        /bin/rm $@
+                    fi
                 fi
             fi
         elif [[ $1 == "-rf." || $1 == "-fr." ]]; then

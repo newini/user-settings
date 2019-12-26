@@ -58,9 +58,9 @@
 
     " Tabe bar
     set showtabline=2
-    hi TabLine      guifg=#333 guibg=#222 gui=none ctermfg=254 ctermbg=238 cterm=none
-    hi TabLineSel   guifg=#666 guibg=#222 gui=bold ctermfg=231 ctermbg=235 cterm=bold
-    hi TabLineFill  guifg=#999 guibg=#222 gui=none ctermfg=254 ctermbg=238 cterm=none
+    hi TabLine      guifg=#333333 guibg=#222222 gui=none ctermfg=254 ctermbg=238 cterm=none
+    hi TabLineSel   guifg=#666666 guibg=#222222 gui=bold ctermfg=231 ctermbg=235 cterm=bold
+    hi TabLineFill  guifg=#999999 guibg=#222222 gui=none ctermfg=254 ctermbg=238 cterm=none
 
 "==========================
 " Last Status Line

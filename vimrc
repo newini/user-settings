@@ -29,6 +29,9 @@
     nnoremap jT <C-W><C-K>
     nnoremap ht <C-W><C-L>
 
+    " NERDTree
+    map <C-e> :NERDTreeToggle<CR>
+
 "==========================
 " Have Vim jump to the last position when reopening a file
 "==========================

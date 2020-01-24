@@ -21,6 +21,8 @@ echo "source \$HOME/$dirctory_name/vimrc" > ../.vimrc
 # vim cpp syntax & plugin
 cp -rT vim ../.vim
 
+# NERDTree
+git clone https://github.com/preservim/nerdtree.git ~/.vim/pack/vendor/start/nerdtree
 
 # Latexmk
 cp latexmkrc ../.latexmkrc

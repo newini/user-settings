@@ -1,6 +1,8 @@
 #!/bin/bash
 
-##
+#-----------------------------------------------
+#                   Basic
+#-----------------------------------------------
 # Bash color
     export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\W\[\033[m\]\$ "
     export CLICOLOR=1
@@ -8,32 +10,35 @@
     # ls blue to violet
     export LS_COLORS='di=01;35'
 
-##
+# Add .local to PATH
+    export PATH=~/.local/bin:$PATH
+
 # Display if go shell from vim
     [[ -n "$VIMRUNTIME" ]] && PS1="(VIM): \[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\W\[\033[m\]\$ "
 
-##
 # Set default editor
     export EDITOR='vim'
 
-##
+
+#-----------------------------------------------
+#                   Windows
+#-----------------------------------------------
+# setting for windows subsystem for linux
+#    source $HOME/user-settings/wsl.sh
+
+
+#-----------------------------------------------
+#                   Alias
+#-----------------------------------------------
 # Faster ssh X11 forwarding
-    #alias ssh='ssh -XC -c aes128-gcm' # Fastest one, Enabled OpenSSH > 6.2, faster than aes128-ctr
     alias ssh='ssh -XYC4 -c aes128-ctr'
 
-##
 # Git aliases
     source $HOME/user-settings/git_aliases.sh
 
-##
 # Alias
     alias py='python3'
 
-##
-# setting for windows subsystem for linux
-    #source $HOME/user-settings/wsl.sh
-
-##
 # rm, reject some words and confirm to prevent accident
     rm() {
         if [[ $1 == "-rf" || $1 == "-fr" ]]; then

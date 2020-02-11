@@ -39,8 +39,13 @@
 # Alias
     alias py='python3'
 
+# ROOT TBrowser
+    function rb() {
+        root -l $1 -e "new TBrowser"
+    }
+
 # rm, reject some words and confirm to prevent accident
-    rm() {
+    function rm() {
         if [[ $1 == "-rf" || $1 == "-fr" ]]; then
             if [[ $2 == "/tmp"* ]]; then
                 /bin/rm $@

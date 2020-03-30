@@ -66,3 +66,4 @@
             /bin/rm $@
         fi
     }
+    alias rm=rm

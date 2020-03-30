@@ -15,14 +15,21 @@ echo "    source \$HOME/$dirctory_name/bashrc" >> ../.bashrc
 echo "" >> ../.bashrc
 
 
+# Latexmk
+cp latexmkrc ../.latexmkrc
+
+
 # Vim
 # vim settings
 echo "source \$HOME/$dirctory_name/vimrc" > ../.vimrc
 # vim cpp syntax & plugin
 cp -rT vim ../.vim
 
+#----------------------
+# Vim
+#----------------------
 # NERDTree
 git clone https://github.com/preservim/nerdtree.git ~/.vim/pack/vendor/start/nerdtree
 
-# Latexmk
-cp latexmkrc ../.latexmkrc
+# IndentLine
+git clone https://github.com/Yggdroot/indentLine.git ~/.vim/pack/vendor/start/indentLint

@@ -7,6 +7,7 @@
     alias onedrive="cd /mnt/c/Users/eckim/OneDrive/workspace"
     alias itk='cd /mnt/c/Users/eckim/Desktop/itk/'
     alias my-thesis='cd /mnt/c/Users/eckim/OneDrive/Docu/Work/JLAB/Master/thesis'
+    alias data='cd /mnt/d/data/'
 
 ## mkdir option
     alias mkdir='mkdir -m 755'

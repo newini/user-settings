@@ -24,7 +24,10 @@
 #                   Windows
 #-----------------------------------------------
 # setting for windows subsystem for linux
-#    source $HOME/user-settings/wsl.sh
+    result=`cat /proc/version`
+    if [[ $result == *"Microsoft"* ]]; then
+        source $HOME/user-settings/wsl.sh
+    fi
 
 
 #-----------------------------------------------

@@ -39,7 +39,10 @@
 # Git aliases
     source $HOME/user-settings/git_aliases.sh
 
-# Alias
+# Grep exclude directory '.git'
+    alias grep='grep --exclude-dir=".git" --color'
+
+# Python
     alias py='python3'
 
 # ROOT TBrowser

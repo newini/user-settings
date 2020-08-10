@@ -116,3 +116,4 @@
         Plug 'Yggdroot/indentLine' " Display thin vertical lines at each indentation level for code indented with spaces
     call plug#end()
     autocmd Filetype json let g:indentLine_setConceal = 0 " Must disable indentline for JSON file
+

@@ -1,0 +1,81 @@
+#!/bin/bash
+#!/bin/zsh
+#
+# ====================================
+# Author: Eunchong Kim
+# Date: Aug., 2020
+# Project: user-settings
+# Description: common
+# ====================================
+
+
+#-----------------------------------------------
+#               Variables
+#-----------------------------------------------
+# Add .local to PATH
+    export PATH=~/.local/bin:$PATH
+
+# Set default editor
+    export EDITOR='vim'
+
+
+#-----------------------------------------------
+#               Load for WSL
+#-----------------------------------------------
+# setting for windows subsystem for linux
+    result=`cat /proc/version`
+    if [[ $result == *"microsoft"* ]]; then
+        source $HOME/user-settings/wsl
+    fi
+
+
+#-----------------------------------------------
+#                   Alias
+#-----------------------------------------------
+# ls
+    alias ll='ls -l'
+
+# Faster ssh X11 forwarding
+    alias ssh='ssh -XYC4 -c aes128-ctr'
+
+# Git aliases
+    source $HOME/user-settings/git_aliases
+
+# Grep exclude directory '.git'
+    alias grep='grep --exclude-dir=".git" --color'
+
+# Python
+    alias py='python3'
+
+
+#-----------------------------------------------
+#                   Macros
+#-----------------------------------------------
+# ROOT TBrowser
+    function rb() {
+        root -l $1 -e "new TBrowser"
+    }
+
+# rm, reject some words and confirm to prevent accident
+    function rm() {
+        if [[ $1 == "-rf" || $1 == "-fr" ]]; then
+            if [[ $2 == "/tmp"* ]]; then
+                /bin/rm $@
+            else
+                if [[ $2 == "./" || $2 == "/" || $2 == "/." || $2 == "." ]]; then
+                    echo "YOU USED rm '$@', THINK AGAIN!"
+                else
+                    temp=$@
+                    read -p "YOU USED 'rm $temp', ARE YOU SURE? "
+                    if [[ $REPLY =~ ^[Yy]$ ]]; then
+                        /bin/rm $@
+                    fi
+                fi
+            fi
+        elif [[ $1 == "-rf." || $1 == "-fr." ]]; then
+            echo "YOU USED 'rm $@', THINK AGAIN!"
+        else
+            /bin/rm $@
+        fi
+    }
+    alias rm=rm

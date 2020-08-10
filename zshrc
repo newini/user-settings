@@ -1,25 +1,21 @@
-#!/bin/bash
+#!/bin/zsh
 #
 # ====================================
 # Author: Eunchong Kim
 # Date: Aug., 2020
 # Project: user-settings
-# Description: bashrc
+# Description: zshrc
 # ====================================
 
 
 #-----------------------------------------------
 #                   Basic
 #-----------------------------------------------
-# Bash color
-    export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\W\[\033[m\]\$ "
-    export CLICOLOR=1
-    export LSCOLORS=ExFxBxDxCxegedabagacad
-    # ls blue to violet
-    export LS_COLORS='di=01;35'
+# zsh color
+    export PROMPT="%F{cyan}%n%F{white}@%F{green}%m:%F{yellow}%1~$ "
 
 # Display if go shell from vim
-    [[ -n "$VIMRUNTIME" ]] && PS1="(VIM): \[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\W\[\033[m\]\$ "
+    [[ -n "$VIMRUNTIME" ]] && PROMPT="(VIM): %F{cyan}%n%F{white}@%F{green}%m:%F{yellow}%1~$ "
 
 
 #-----------------------------------------------

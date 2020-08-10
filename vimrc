@@ -14,6 +14,9 @@
 
     set formatoptions-=ro   " Disable auto comment out when indent
 
+    set mouse=a             " Use mouse wheel to scroll on all modes
+
+
 "==========================
 " HotKeys settings
 "==========================

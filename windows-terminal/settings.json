@@ -48,8 +48,10 @@
                 "startingDirectory" : "//wsl$/",
                 // Appearance
                 "acrylicOpacity" : 0.7,
+                "background" : "#333333",
                 "backgroundImage": "ms-appdata:///roaming/earth.jpg",
-                "backgroundImageOpacity" : 0.75,
+                //"backgroundImage": "C:\Users\eckim\OneDrive\wasshi\photoshop\earth.jpg",
+                "backgroundImageOpacity" : 0.5,
                 "backgroundImageStretchMode" : "fill",
                 "colorScheme" : "Campbell",
                 "cursorColor" : "#FFFFFD",

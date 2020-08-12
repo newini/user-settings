@@ -93,8 +93,22 @@
 #               Welcome message
 #-----------------------------------------------
 if ! [[ -n "$VIMRUNTIME" ]]; then
-    echo -ne "Hello, $USER! Today is $(date).\n\n"
-    cal
-    echo -ne "System Info: $(uptime)\n\n"
-    echo -ne "You are on shell: `ps -p$$ -ocmd=`\n"
+    echo -ne "Hello, $USER! Today is $(date).\n"
+    echo -ne "System Info: $(uptime)\n"
+tux="
+ _______________________
+< You are on shell: `ps -p$$ -ocmd=` >
+ -----------------------"
+tux+='
+   \
+    \
+        .--.
+       |o_o |
+       |:_/ |
+      //   \ \
+     (|     | )
+    / \_   _/\`\
+    \___)=(___/
+'
+    echo $tux
 fi

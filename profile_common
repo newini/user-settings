@@ -20,12 +20,20 @@
 
 
 #-----------------------------------------------
-#               Load for WSL
+#               Source for WSL
 #-----------------------------------------------
-# setting for windows subsystem for linux
     result=`cat /proc/version`
     if [[ $result == *"microsoft"* ]]; then
         source $HOME/user-settings/wsl
+    fi
+
+
+#-----------------------------------------------
+#               Source for ATLAS ICEPP/LXPLUS
+#-----------------------------------------------
+    result=`uname -a`
+    if [[ $result == *"icepp"* ]] || [[ $result == *"lxplus"* ]]; then
+        source $HOME/user-settings/atlas_common
     fi
 
 

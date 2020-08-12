@@ -1,0 +1,20 @@
+#!/bin/bash
+#!/bin/zsh
+#
+# ====================================
+# Author: Eunchong Kim
+# Date: Aug., 2020
+# Project: user-settings
+# Description: ATLAS common
+# ====================================
+
+
+# CERN Virtual Machine File System (CVMFS)
+    export ATLAS_LOCAL_ROOT_BASE=/cvmfs/atlas.cern.ch/repo/ATLASLocalRootBase
+    alias setupATLAS='source ${ATLAS_LOCAL_ROOT_BASE}/user/atlasLocalSetup.sh'
+
+# Directory SITEROOT
+#    export SITEROOT=/cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc49-opt/20.7.8
+
+# Subversion
+#    export SVNROOT="svn+ssh://eunchong@svn.cern.ch/reps/atlasoff"

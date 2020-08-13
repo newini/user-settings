@@ -18,6 +18,9 @@
 # Set default editor
     export EDITOR='vim'
 
+# Set nodename for vimrc to know if it is icepp or cern
+    export NODENAME=`uname -n | cut -f2 -d'.'`
+
 
 #-----------------------------------------------
 #               Source for WSL

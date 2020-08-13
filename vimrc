@@ -108,7 +108,9 @@
 " Automatically removing all trailing whitespace
 " Every time the user issues a :w command, Vim will automatically remove all trailing whitespace before saving
 "==========================
+if $NODENAME != "icepp" && $NODENAME != "cern"      " except icepp and lxplus
     autocmd BufWritePre * %s/\s\+$//e
+endif
 
 "==========================
 " Plugins

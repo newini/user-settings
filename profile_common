@@ -77,7 +77,8 @@
                     echo "YOU USED rm '$@', THINK AGAIN!"
                 else
                     temp=$@
-                    read -p "YOU USED 'rm $temp', ARE YOU SURE? "
+                    echo -n "YOU USED 'rm $temp', ARE YOU SURE? "
+                    read REPLY
                     if [[ $REPLY =~ ^[Yy]$ ]]; then
                         /bin/rm $@
                     fi

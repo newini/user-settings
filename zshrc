@@ -24,3 +24,8 @@
     if [ -e $HOME/user-settings/profile_common ]; then
         source $HOME/user-settings/profile_common
     fi
+
+#-----------------------------------------------
+#           Disable share history
+#-----------------------------------------------
+    unsetopt share_history

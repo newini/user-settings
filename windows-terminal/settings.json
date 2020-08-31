@@ -47,7 +47,7 @@
                 "commandline" : "wsl.exe ~",
                 "startingDirectory" : "//wsl$/",
                 // Appearance
-                "acrylicOpacity" : 0.7,
+                "acrylicOpacity" : 0.8,
                 "background" : "#222222",
                 //"backgroundImage": "ms-appdata:///roaming/earth.jpg",
                 //"backgroundImageOpacity" : 0.5,

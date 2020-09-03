@@ -26,7 +26,7 @@
 #               Source for WSL
 #-----------------------------------------------
     result=`cat /proc/version`
-    if [[ $result == *"microsoft"* ]]; then
+    if [[ $result == *"icrosoft"* ]]; then # Include both 'microsoft' and 'Microsoft'
         source $HOME/user-settings/wsl
     fi
 

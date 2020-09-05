@@ -30,6 +30,14 @@
         source $HOME/user-settings/wsl
     fi
 
+#-----------------------------------------------
+#               source ROOT
+#-----------------------------------------------
+thisroot=`ls /opt/root/6.*.*-install/bin/thisroot.sh 2>/dev/null | sort -V | tail -n 1`
+# notice: 2>/dev/null is for suppress error message
+if [ -f $thisroot ]; then
+    source $thisroot
+fi
 
 #-----------------------------------------------
 #               Source for ATLAS ICEPP/LXPLUS
@@ -38,7 +46,6 @@
     if [[ $result == *"icepp"* ]] || [[ $result == *"lxplus"* ]]; then
         source $HOME/user-settings/atlas_common
     fi
-
 
 #-----------------------------------------------
 #                   Alias

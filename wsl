@@ -56,3 +56,12 @@
         vim $setting_path
         cp $setting_path $HOME/user-settings/windows-terminal/.
     }
+
+# ------------------------------------
+#           Syncthing
+# ------------------------------------
+if [ -z "`pgrep syncthing`" ]; then # If syncthing is not running
+    if [ -n "`syncthing -help 2>/dev/null`" ]; then # If synching -help is not empty
+        syncthing -no-browser -logfile=".syncthing.log" > /tmp/syncthing.out &
+    fi
+fi

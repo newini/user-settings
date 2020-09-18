@@ -62,6 +62,6 @@
 # ------------------------------------
 if [ -z "`pgrep syncthing`" ]; then # If syncthing is not running
     if [ -n "`syncthing -help 2>/dev/null`" ]; then # If synching -help is not empty
-        syncthing -no-browser -logfile=".syncthing.log" > /tmp/syncthing.out &
+        syncthing -no-browser -logfile=".syncthing.log" -logflags="3" > /tmp/syncthing.out &
     fi
 fi

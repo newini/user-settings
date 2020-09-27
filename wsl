@@ -52,7 +52,11 @@
 #       Windows terminal setting
 # ------------------------------------
     function wtsetting() {
-        setting_path=/mnt/c/Users/eckim/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json
+        this_win_username=eunchong
+        if [ -d "/mnt/c/Users/eckim" ]; then
+            this_win_username=eckim
+        fi
+        setting_path=/mnt/c/Users/${this_win_username}/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json
         vim $setting_path
         cp $setting_path $HOME/user-settings/windows-terminal/.
     }

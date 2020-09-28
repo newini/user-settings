@@ -37,7 +37,7 @@ setopt +o nomatch
 thisroot=`ls /opt/root/6.*.*-install/bin/thisroot.sh ~/.local/opt/root/6.*.*-install/bin/thisroot.sh 2>/dev/null | sort -V | tail -n 1`
 setopt -o nomatch
 # notice: 2>/dev/null is for suppress error message
-if [ -f $thisroot ]; then
+if [ ! -z $thisroot -a -f $thisroot ]; then
     source $thisroot
 fi
 

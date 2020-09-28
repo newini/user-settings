@@ -19,7 +19,10 @@
     "copyFormatting": false,
 
     // Launch size, Accepts: "default", "maximized", "fullscreen"
-    "launchMode" : "maximized",
+    "launchMode" : "default",
+    "initialPosition" : "0, 0",
+    "initialCols" : 120, // Default: 120
+    "initialRows" : 55, // Default: 30
 
     // Theme, Accepts: "system", "dark", "light"
     "theme": "dark",

@@ -120,8 +120,16 @@ endif
 "==========================
     filetype plugin indent on
 
-    call plug#begin()
-        Plug 'Yggdroot/indentLine' " Display thin vertical lines at each indentation level for code indented with spaces
-    call plug#end()
+    " This will be installed by setup.sh
+    "call plug#begin()
+
+    "    " Display thin vertical lines at each indentation level for code indented with spaces
+    "    Plug 'Yggdroot/indentLine'
+
+    "    " You Complete Me
+    "    Plug 'ycm-core/YouCompleteMe'
+    "call plug#end()
+
     autocmd Filetype json let g:indentLine_setConceal = 0 " Must disable indentline for JSON file
 
+    let g:ycm_min_num_of_chars_for_completion = 3 " Minimum characters for auto completion

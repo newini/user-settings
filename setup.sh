@@ -45,6 +45,6 @@ git clone https://github.com/preservim/nerdtree.git ~/.vim/pack/vendor/start/ner
 git clone https://github.com/Yggdroot/indentLine.git ~/.vim/pack/vendor/start/indentLint
 
 # You Complete Me
-git clone https://github.com/ycm-core/YouCompleteMe.git  ~/.vim/pack/vendor/start/YouCompleteMe
+git clone --recurse-submodules https://github.com/ycm-core/YouCompleteMe.git  ~/.vim/pack/vendor/start/YouCompleteMe
 cd ~/.vim/pack/vendor/start/YouCompleteMe
 python3 install.py

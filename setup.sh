@@ -61,3 +61,4 @@ git clone https://github.com/Yggdroot/indentLine.git ~/.vim/pack/vendor/start/in
 git clone --recurse-submodules https://github.com/ycm-core/YouCompleteMe.git  ~/.vim/pack/vendor/start/YouCompleteMe
 cd ~/.vim/pack/vendor/start/YouCompleteMe
 python3 install.py
+cd ~/user-settings

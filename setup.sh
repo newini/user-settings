@@ -57,7 +57,12 @@ git clone https://github.com/preservim/nerdtree.git ~/.vim/pack/vendor/start/ner
 # IndentLine
 git clone https://github.com/Yggdroot/indentLine.git ~/.vim/pack/vendor/start/indentLint
 
+# Auto Pairs
+# https://github.com/jiangmiao/auto-pairs
+git clone git://github.com/jiangmiao/auto-pairs.git ~/.vim/pack/vendor/start/auto-pairs
+
 # You Complete Me
+# If compile failed, install python3-dev and reinstall cmake3
 git clone --recurse-submodules https://github.com/ycm-core/YouCompleteMe.git  ~/.vim/pack/vendor/start/YouCompleteMe
 cd ~/.vim/pack/vendor/start/YouCompleteMe
 python3 install.py

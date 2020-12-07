@@ -16,9 +16,12 @@
     export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
 
 # Start VcXsrv if not running
+# VcXsrv Options
+# -ac       disable access control restrictions
+# -[no]wgl: Enable the GLX extension to use the native Windows WGL interface for hardware-accelerated OpenGL
     powershell.exe -Command '& tasklist' |
         if ! grep -q vcxsrv; then
-            powershell.exe -Command '& "C:\Program Files\VcXsrv\vcxsrv.exe" -multiwindow -wgl -ac'
+            powershell.exe -Command '& "C:\Program Files\VcXsrv\vcxsrv.exe" -multiwindow -nowgl -ac'
         fi
 
 

@@ -19,9 +19,18 @@
 # VcXsrv Options
 # -ac       disable access control restrictions
 # -[no]wgl: Enable the GLX extension to use the native Windows WGL interface for hardware-accelerated OpenGL
+    # Get Windows running process list via powersell.exe and check if it is running
     powershell.exe -Command '& tasklist' |
         if ! grep -q vcxsrv; then
+            echo '[Warning] VcXsrv is not running. Starting the VcXSrv ...'
             powershell.exe -Command '& "C:\Program Files\VcXsrv\vcxsrv.exe" -multiwindow -nowgl -ac'
+        fi
+    # Check again
+    powershell.exe -Command '& tasklist' |
+        if ! grep -q vcxsrv; then
+            echo '[Warning] VcXsrv is still not running! Check yourself.'
+        else
+            echo '[Info] VcXsrv is running.'
         fi
 
 
@@ -68,9 +77,15 @@
 #           Syncthing
 # ------------------------------------
 if [ -z "`pgrep syncthing`" ]; then # If syncthing is not running
-    echo -e "Syncthing is not running"
+    echo -e "[Warning] Syncthing is not running. Starting Syncthing ..."
     if [ -n "`syncthing -help 2>/dev/null`" ]; then # If synching -help is not empty
         syncthing -no-browser -logfile=".syncthing.log" -logflags="3" > /tmp/syncthing.out &
-        echo -e "Successfully run the Syncthing"
+        echo -e "Successfully started the Syncthing"
     fi
+fi
+# Check again
+if [ -z "`pgrep syncthing`" ]; then # If syncthing is not running
+    echo -e "[Warning] Syncthing is still not running! Check yourself."
+else
+    echo -e "[Info] Syncthing is running."
 fi

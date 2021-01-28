@@ -3,75 +3,86 @@
 #
 # ====================================
 # Author: Eunchong Kim
-# Date: Aug., 2020
+# Date: Jan. 2021
 # Project: user-settings
 # Description: common setting for WSL
 # ====================================
 
 
 # ------------------------------------
-#               Display
+#       Set X Server DISPLAY path
 # ------------------------------------
-# X Server DISPLAY
-    export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
+export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
 
-# Start VcXsrv if not running
-# VcXsrv Options
+
+# ------------------------------------
+#   Start VcXsrv on Windows if not running
+# ------------------------------------
+# Get Windows running process list via powersell.exe and check if it is running
+powershell.exe -Command '& tasklist' |
+    if ! grep -q vcxsrv; then
+        echo '[Warning] VcXsrv is not running. Starting the VcXSrv ...'
+        powershell.exe -Command '& "C:\Program Files\VcXsrv\vcxsrv.exe" -multiwindow -nowgl -ac'
+    fi
+# Check again
+powershell.exe -Command '& tasklist' |
+    if ! grep -q vcxsrv; then
+        echo '[Warning] VcXsrv is still not running! Check yourself.'
+    else
+        echo '[Info] VcXsrv is running.'
+    fi
+
+# Memo: VcXsrv Options
 # -ac       disable access control restrictions
 # -[no]wgl: Enable the GLX extension to use the native Windows WGL interface for hardware-accelerated OpenGL
-    # Get Windows running process list via powersell.exe and check if it is running
-    powershell.exe -Command '& tasklist' |
-        if ! grep -q vcxsrv; then
-            echo '[Warning] VcXsrv is not running. Starting the VcXSrv ...'
-            powershell.exe -Command '& "C:\Program Files\VcXsrv\vcxsrv.exe" -multiwindow -nowgl -ac'
-        fi
-    # Check again
-    powershell.exe -Command '& tasklist' |
-        if ! grep -q vcxsrv; then
-            echo '[Warning] VcXsrv is still not running! Check yourself.'
-        else
-            echo '[Info] VcXsrv is running.'
-        fi
 
 
 # ------------------------------------
 #               Alias
 # ------------------------------------
 # Change Directory
-    alias onedrive="cd /mnt/c/Users/eckim/OneDrive/workspace"
-    alias my-thesis='cd /mnt/c/Users/eckim/OneDrive/Docu/Work/JLAB/Master/thesis'
-    alias data='cd /mnt/d/data/'
+alias onedrive="cd /mnt/c/Users/eckim/OneDrive/workspace"
+alias my-thesis='cd /mnt/c/Users/eckim/OneDrive/Docu/Work/JLAB/Master/thesis'
+alias data='cd /mnt/d/data/'
 
 # mkdir option
-    alias mkdir='mkdir -m 755'
+alias mkdir='mkdir -m 755'
 
 # OPEN
-    alias open='xdg-open'
+alias open='xdg-open'
+
+# Windows store apps
+# Reference: https://www.tenforums.com/software-apps/57000-method-open-any-windows-10-apps-command-line.html
+# WPS office
+alias wpsoffice="powershell.exe -Command '& explorer.exe shell:AppsFolder\ZhuhaiKingsoftOfficeSoftw.WPSOffice2019_924xes6e8q1tw!WPSOffice2019'"
+# TODO: add parameter of file to open
 
 # Windows program
-    export PATH=$PATH:/mnt/c/Program\ Files\ \(x86\)/Adobe/Acrobat\ Reader\ DC/Reader
-    alias adobe='AcroRd32.exe'
+# Edge browser
+export PATH=$PATH:/mnt/c/Program\ Files\ (x86)/Microsoft/Edge/Application
+alias edge='msedge.exe'
 
 
 # ------------------------------------
 #               Media
 # ------------------------------------
 # audio (may not work)
-    export PULSE_SERVER=tcp:localhost
+export PULSE_SERVER=tcp:localhost
 
 
 # ------------------------------------
 #       Windows terminal setting
 # ------------------------------------
-    function wtsetting() {
-        this_win_username=eunchong
-        if [ -d "/mnt/c/Users/eckim" ]; then
-            this_win_username=eckim
-        fi
-        setting_path=/mnt/c/Users/${this_win_username}/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json
-        vim $setting_path
-        cp $setting_path $HOME/user-settings/windows-terminal/.
-    }
+function wtsetting() {
+    this_win_username=eunchong
+    if [ -d "/mnt/c/Users/eckim" ]; then
+        this_win_username=eckim
+    fi
+    setting_path=/mnt/c/Users/${this_win_username}/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json
+    vim $setting_path
+    cp $setting_path $HOME/user-settings/windows-terminal/.
+}
+
 
 # ------------------------------------
 #           Syncthing

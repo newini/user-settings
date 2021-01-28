@@ -3,7 +3,7 @@
 #
 # ====================================
 # Author: Eunchong Kim
-# Date: Aug., 2020
+# Date: Jan. 2021
 # Project: user-settings
 # Description: common
 # ====================================
@@ -13,22 +13,23 @@
 #               Variables
 #-----------------------------------------------
 # Add .local to PATH
-    export PATH=~/.local/bin:$PATH
+export PATH=~/.local/bin:$PATH
 
 # Set default editor
-    export EDITOR='vim'
+export EDITOR='vim'
 
 # Set nodename for vimrc to know if it is icepp or cern
-    export NODENAME=`uname -n | cut -f2 -d'.'`
+export NODENAME=`uname -n | cut -f2 -d'.'`
 
 
 #-----------------------------------------------
 #               Source for WSL
 #-----------------------------------------------
-    result=`cat /proc/version`
-    if [[ $result == *"icrosoft"* ]]; then # Include both 'microsoft' and 'Microsoft'
-        source $HOME/user-settings/wsl
-    fi
+result=`cat /proc/version`
+if [[ $result == *"icrosoft"* ]]; then # Include both 'microsoft' and 'Microsoft'
+    source $HOME/user-settings/wsl
+fi
+
 
 #-----------------------------------------------
 #               source ROOT
@@ -41,65 +42,66 @@ if [ ! -z $thisroot -a -f $thisroot ]; then
     source $thisroot
 fi
 
+
 #-----------------------------------------------
 #               Source for ATLAS ICEPP/LXPLUS
 #-----------------------------------------------
-    result=`uname -a`
-    if [[ $result == *"icepp"* ]] || [[ $result == *"lxplus"* ]]; then
-        source $HOME/user-settings/atlas_common
-    fi
+result=`uname -a`
+if [[ $result == *"icepp"* ]] || [[ $result == *"lxplus"* ]]; then
+    source $HOME/user-settings/atlas_common
+fi
 
 #-----------------------------------------------
 #                   Alias
 #-----------------------------------------------
 # ls
-    alias ll='ls -l'
+alias ll='ls -l'
 
 # Faster ssh X11 forwarding
-    alias ssh='ssh -XYC4 -c aes128-ctr'
+alias ssh='ssh -XYC4 -c aes128-ctr'
 
 # Git aliases
-    source $HOME/user-settings/git_aliases
+source $HOME/user-settings/git_aliases
 
 # Grep exclude directory '.git'
-    alias grep='grep --exclude-dir=".git" --color'
+alias grep='grep --exclude-dir=".git" --color'
 
 # Python
-    alias py='time python3'
+alias py='time python3'
 
 
 #-----------------------------------------------
 #                   Macros
 #-----------------------------------------------
 # ROOT TBrowser
-    function rb() {
-        root -l $1 -e "new TBrowser"
-    }
+function rb() {
+    root -l $1 -e "new TBrowser"
+}
 
 # rm, reject some words and confirm to prevent accident
-    function rm() {
-        if [[ $1 == "-rf" || $1 == "-fr" ]]; then
-            if [[ $2 == "/tmp"* ]]; then
-                /bin/rm $@
+function rm() {
+    if [[ $1 == "-rf" || $1 == "-fr" ]]; then
+        if [[ $2 == "/tmp"* ]]; then
+            /bin/rm $@
+        else
+            if [[ $2 == "./" || $2 == "/" || $2 == "/." || $2 == "." ]]; then
+                echo "YOU USED rm '$@', THINK AGAIN!"
             else
-                if [[ $2 == "./" || $2 == "/" || $2 == "/." || $2 == "." ]]; then
-                    echo "YOU USED rm '$@', THINK AGAIN!"
-                else
-                    temp=$@
-                    echo -n "YOU USED 'rm $temp', ARE YOU SURE? "
-                    read REPLY
-                    if [[ $REPLY =~ ^[Yy]$ ]]; then
-                        /bin/rm $@
-                    fi
+                temp=$@
+                echo -n "YOU USED 'rm $temp', ARE YOU SURE? "
+                read REPLY
+                if [[ $REPLY =~ ^[Yy]$ ]]; then
+                    /bin/rm $@
                 fi
             fi
-        elif [[ $1 == "-rf." || $1 == "-fr." ]]; then
-            echo "YOU USED 'rm $@', THINK AGAIN!"
-        else
-            /bin/rm $@
         fi
-    }
-    alias rm=rm
+    elif [[ $1 == "-rf." || $1 == "-fr." ]]; then
+        echo "YOU USED 'rm $@', THINK AGAIN!"
+    else
+        /bin/rm $@
+    fi
+}
+alias rm=rm
 
 
 #-----------------------------------------------

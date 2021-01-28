@@ -80,7 +80,6 @@ if [ -z "`pgrep syncthing`" ]; then # If syncthing is not running
     echo -e "[Warning] Syncthing is not running. Starting Syncthing ..."
     if [ -n "`syncthing -help 2>/dev/null`" ]; then # If synching -help is not empty
         syncthing -no-browser -logfile=".syncthing.log" -logflags="3" > /tmp/syncthing.out &
-        echo -e "Successfully started the Syncthing"
     fi
 fi
 # Check again

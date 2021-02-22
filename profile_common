@@ -114,13 +114,12 @@ alias rm=rm
 #               Welcome message
 #-----------------------------------------------
 if ! [[ -n "$VIMRUNTIME" ]]; then
-    echo -ne "Hello, $USER! Today is $(date).\n"
-    echo -ne "System Info: $(uptime)\n"
-tux="
- _______________________
-< You are on shell: $shell_type >
- -----------------------"
-tux+='
+    echo    "Hello, $USER! Today is $(date)."
+    #echo    "System Info: $(uptime)"
+    echo    " _______________________"
+    echo    "< You are on shell: $shell_type >"
+    echo -n " -----------------------"
+    cat <<< '
    \
     \
         .--.
@@ -131,5 +130,4 @@ tux+='
     / \_   _/\`\
     \___)=(___/
 '
-    echo $tux
 fi

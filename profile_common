@@ -8,6 +8,8 @@
 # Description: common
 # ====================================
 
+# Get shell type
+shell_type=`ps -p$$ -ocmd=`
 
 #-----------------------------------------------
 #               Variables
@@ -34,9 +36,13 @@ fi
 #-----------------------------------------------
 #               source ROOT
 #-----------------------------------------------
-setopt +o nomatch
+if [[ $shell_type =~ '-zsh' ]]; then
+    setopt +o nomatch
+fi
 thisroot=`ls /opt/root/6.*.*-install/bin/thisroot.sh ~/.local/opt/root/6.*.*-install/bin/thisroot.sh 2>/dev/null | sort -V | tail -n 1`
-setopt -o nomatch
+if [[ $shell_type =~ '-zsh' ]]; then
+    setopt -o nomatch
+fi
 # notice: 2>/dev/null is for suppress error message
 if [ ! -z $thisroot -a -f $thisroot ]; then
     source $thisroot
@@ -112,7 +118,7 @@ if ! [[ -n "$VIMRUNTIME" ]]; then
     echo -ne "System Info: $(uptime)\n"
 tux="
  _______________________
-< You are on shell: `ps -p$$ -ocmd=` >
+< You are on shell: $shell_type >
  -----------------------"
 tux+='
    \

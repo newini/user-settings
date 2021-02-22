@@ -59,7 +59,7 @@ alias wpsoffice="powershell.exe -Command '& explorer.exe shell:AppsFolder\Zhuhai
 
 # Windows program
 # Edge browser
-export PATH=$PATH:/mnt/c/Program\ Files\ (x86)/Microsoft/Edge/Application
+export PATH=$PATH:/mnt/c/Program\ Files\ \(x86\)/Microsoft/Edge/Application
 alias edge='msedge.exe'
 
 

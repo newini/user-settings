@@ -113,7 +113,7 @@ alias rm=rm
 #-----------------------------------------------
 #               Welcome message
 #-----------------------------------------------
-if ! [[ -n "$VIMRUNTIME" ]]; then
+if [ -z "$VIMRUNTIME" ]; then
     echo    "Hello, $USER! Today is $(date)."
     #echo    "System Info: $(uptime)"
     echo    " _______________________"

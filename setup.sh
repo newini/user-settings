@@ -21,15 +21,12 @@ if [[ $result == *"icrosoft"* ]]; then # Include both 'microsoft' and 'Microsoft
     cp windows-terminal/settings.json ${setting_path}
 fi
 
-# Add
-# if [ "\$SSH_TTY" != ""  ]; then
-# fir
-# if cannot scp
 # ================================
 #           bashrc
 cat <<EOT >> ../.bashrc
 
 # bashrc user setting
+# Encircle 'if [ "\$SSH_TTY" != ""  ]; then; fi', if cannot scp
 source $HOME/$dirctory_name/bashrc
 EOT
 
@@ -39,6 +36,7 @@ EOT
 cat <<EOT >> ../.zshrc
 
 # zshrc user setting
+# Encircle 'if [ "\$SSH_TTY" != ""  ]; then; fi', if cannot scp
 source $HOME/$dirctory_name/zshrc
 EOT
 

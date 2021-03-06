@@ -9,6 +9,9 @@
 # ====================================
 
 
+this_win_username=eunchong
+
+
 # ------------------------------------
 #       Set X Server DISPLAY path
 # ------------------------------------
@@ -90,7 +93,6 @@ export PULSE_SERVER=tcp:localhost
 #       Windows terminal setting
 # ------------------------------------
 function wtsetting() {
-    this_win_username=eunchong
     setting_path=/mnt/c/Users/${this_win_username}/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json
     vim $setting_path
     vimdiff $setting_path $HOME/user-settings/windows-terminal/.

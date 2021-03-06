@@ -14,9 +14,6 @@ echo "Copy Windoes Terminal settings"
 result=`cat /proc/version`
 if [[ $result == *"icrosoft"* ]]; then # Include both 'microsoft' and 'Microsoft'
     this_win_username=eunchong
-    if [ -d "/mnt/c/Users/eckim" ]; then
-        this_win_username=eckim
-    fi
     setting_path=/mnt/c/Users/${this_win_username}/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json
     cp windows-terminal/settings.json ${setting_path}
 fi

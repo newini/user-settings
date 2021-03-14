@@ -25,6 +25,6 @@
 #-----------------------------------------------
 #           Include common setting
 #-----------------------------------------------
-    if [ -e $HOME/user-settings/profile_common ]; then
-        source $HOME/user-settings/profile_common
-    fi
+if [ -z "$VIMRUNTIME" ]; then
+    source $HOME/user-settings/profile_common
+fi

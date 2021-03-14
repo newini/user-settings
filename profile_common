@@ -97,13 +97,12 @@ alias rm=rm
 #-----------------------------------------------
 #               Welcome message
 #-----------------------------------------------
-if [ -z "$VIMRUNTIME" ]; then
-    echo    "Hello, $USER! Today is $(date)."
-    #echo    "System Info: $(uptime)"
-    echo    " _______________________"
-    echo    "< You are on shell: $shell_type >"
-    echo -n " -----------------------"
-    cat <<< '
+echo    "Hello, $USER! Today is $(date)."
+#echo    "System Info: $(uptime)"
+echo    " _______________________"
+echo    "< You are on shell: $shell_type >"
+echo -n " -----------------------"
+cat <<< '
    \
     \
         .--.
@@ -114,4 +113,3 @@ if [ -z "$VIMRUNTIME" ]; then
     / \_   _/\`\
     \___)=(___/
 '
-fi

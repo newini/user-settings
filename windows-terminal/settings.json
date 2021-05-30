@@ -68,7 +68,7 @@
                 "name": "Ubuntu",
                 "source": "Windows.Terminal.Wsl",
                 "commandline" : "wsl.exe ~",
-                "startingDirectory" : "//wsl$/",
+                "startingDirectory" : "\\\\wsl$\\Ubuntu\\home\\eunchong",
                 //"startingDirectory": "%USERPROFILE%",
                 "hidden": false
             },

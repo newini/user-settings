@@ -104,7 +104,7 @@
 "==========================
     augroup fileTypeIndent
         autocmd!
-        autocmd BufNewFile,BufRead *.rb,*.erb,*.html,*.cxx,*.cpp,*.C,*.h setlocal tabstop=2 softtabstop=2 shiftwidth=2
+        autocmd BufNewFile,BufRead *.rb,*.erb,*.html,*.css,*.js,*.cxx,*.cpp,*.C,*.h setlocal tabstop=2 softtabstop=2 shiftwidth=2
     augroup END
 
 "==========================

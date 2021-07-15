@@ -3,19 +3,27 @@
 
 ## Contents
 
-* **bashrc** - setting for bash shell
+.
+├── README.md
+├── atlas_common
+├── bashrc          : setting for bash shell
+├── git_aliases     : for Git aliases
+├── latexmkrc       : for latexmk
+├── profile_common  : common setting
+├── setup.sh
+├── vim
+│   ├── after
+│   │   └── syntax
+│   │       └── cpp.vim
+│   └── autoload
+│       └── plug.vim
+├── vimrc
+├── windows-terminal
+│   └── settings.json : setting for winfows terminal
+├── wsl             : for windows subsystem linux
+└── zshrc           : setting for zsh shell
 
-* zshrc - setting for zsh shell
-
-* profile_common - common setting
-  1. **wsl** - for windows subsystem linux
-  2. **git________aliase** - for Git aliases
-
-* **vimrc**, **vim/after/syntax/cpp.vim** - for vim
-
-* **latexmkrc** - for latexmk
-
-* windows-terminal/setting.json - setting for winfows terminal
+5 directories, 13 files
 
 
 ## Usage
@@ -33,6 +41,12 @@ required version > 8.0
 ### Plugins
 - IndentLinesToggle
 - NERDTree
+- [YouCompleteMe](https://github.com/ycm-core/YouCompleteMe): Auto complete. Must install for all functions.
+```
+sudo apt install build-essential cmake vim-nox python3-dev -y
+sudo apt install mono-complete golang nodejs default-jdk npm -y
+```
+
 
 ### Hotkeys
 - <F4>: on/off high light search

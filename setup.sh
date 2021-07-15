@@ -64,6 +64,7 @@ git clone git://github.com/jiangmiao/auto-pairs.git ~/.vim/pack/vendor/start/aut
 
 # You Complete Me
 # If compile failed, install 'sudo apt install build-essential cmake vim-nox python3-dev'
+# https://github.com/ycm-core/YouCompleteMe/#linux-64-bit
 git clone --recurse-submodules https://github.com/ycm-core/YouCompleteMe.git  ~/.vim/pack/vendor/start/YouCompleteMe
 cd ~/.vim/pack/vendor/start/YouCompleteMe
 python3 install.py

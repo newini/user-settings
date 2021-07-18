@@ -6,19 +6,23 @@
 ```
 .
 ├── README.md
-├── atlas_common
+├── atlas_common    # alias which use in lxplus or icepp
 ├── bashrc          # setting for bash shell
 ├── git_aliases     # for Git aliases
 ├── latexmkrc       # for latexmk
 ├── profile_common  # common setting
-├── setup.sh
+├── setup.sh        # Initial setup script
 ├── vim
 │   ├── after
+│   │   ├── ftplugin # File type plugins to change tab spaces
+│   │   │   ├── C.vim
+│   │   │   ├── ...
+│   │   │   └── svg.vim
 │   │   └── syntax
 │   │       └── cpp.vim
 │   └── autoload
 │       └── plug.vim
-├── vimrc
+├── vimrc           # Vim setup
 ├── windows-terminal
 │   └── settings.json # setting for winfows terminal
 ├── wsl             # for windows subsystem linux

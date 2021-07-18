@@ -100,14 +100,6 @@
     "set statusline+=\ [%b][0x%B]\                                         " ASCII and byte code under cursor
 
 "==========================
-" Auto change indent width
-"==========================
-    augroup fileTypeIndent
-        autocmd!
-        autocmd BufNewFile,BufRead *.rb,*.erb,*.html,*.css,*.js,*.cxx,*.cpp,*.C,*.h setlocal tabstop=2 softtabstop=2 shiftwidth=2
-    augroup END
-
-"==========================
 " Automatically removing all trailing whitespace
 " Every time the user issues a :w command, Vim will automatically remove all trailing whitespace before saving
 "==========================

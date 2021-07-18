@@ -47,11 +47,12 @@ cp latexmkrc ../.latexmkrc
 #           Vim
 # vim settings
 echo "source \$HOME/$dirctory_name/vimrc" > ../.vimrc
-# vim cpp syntax & plugin
+# Copy file type plugin & cpp syntax
 cp -rT vim ../.vim
 
+
 # ---------------------
-#       packages
+#       Vim packages
 # NERDTree
 git clone https://github.com/preservim/nerdtree.git ~/.vim/pack/vendor/start/nerdtree
 
@@ -69,3 +70,6 @@ git clone --recurse-submodules https://github.com/ycm-core/YouCompleteMe.git  ~/
 cd ~/.vim/pack/vendor/start/YouCompleteMe
 python3 install.py
 cd ~/user-settings
+
+echo -e ''
+echo -e 'Setup finished!'

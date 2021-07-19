@@ -1,4 +1,4 @@
-# User setting files
+# User setting files for Linux and WSL
 
 
 ## Contents
@@ -14,10 +14,6 @@
 ├── setup.sh        # Initial setup script
 ├── vim
 │   ├── after
-│   │   ├── ftplugin # File type plugins to change tab spaces
-│   │   │   ├── C.vim
-│   │   │   ├── ...
-│   │   │   └── svg.vim
 │   │   └── syntax
 │   │       └── cpp.vim
 │   └── autoload

@@ -113,7 +113,7 @@ endif
     augroup fileTypeIndent
         autocmd!
         autocmd BufNewFile,BufRead *.rb,*.erb setlocal tabstop=2 softtabstop=2 shiftwidth=2
-        autocmd BufNewFile,BufRead *.html,*.css,*.js,*.svg setlocal tabstop=2 softtabstop=2 shiftwidth=2
+        autocmd BufNewFile,BufRead *.html,*.css,*.scss,*.js,*.svg setlocal tabstop=2 softtabstop=2 shiftwidth=2
         autocmd BufNewFile,BufRead *.cxx,*.cpp,*.C,*.h setlocal tabstop=2 softtabstop=2 shiftwidth=2
     augroup END
 

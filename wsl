@@ -45,8 +45,7 @@ powershell.exe -Command '& tasklist' |
 # ------------------------------------
 # Change Directory
 alias onedrive="cd /mnt/c/Users/$this_win_username/OneDrive/workspace"
-alias my-thesis="cd /mnt/c/Users/$this_win_username/OneDrive/Docu/Work/JLAB/Master/thesis"
-alias data='cd /mnt/d/data/'
+alias download='cd /mnt/c/Users/$this_win_username/Downloads'
 
 # mkdir option
 alias mkdir='mkdir -m 755'

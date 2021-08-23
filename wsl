@@ -9,7 +9,7 @@
 # ====================================
 
 
-this_win_username=eunchong
+this_win_username=`powershell.exe '$env:UserName'`
 
 
 # ------------------------------------

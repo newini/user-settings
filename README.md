@@ -1,12 +1,13 @@
 # User setting files for Linux and WSL
 
 
-## Contents
+
+## 1. Contents
 
 ```
+tree
 .
 ├── README.md
-├── atlas_common    # alias which use in lxplus or icepp
 ├── bashrc          # setting for bash shell
 ├── git_aliases     # for Git aliases
 ├── latexmkrc       # for latexmk
@@ -24,33 +25,45 @@
 ├── wsl             # for windows subsystem linux
 └── zshrc           # setting for zsh shell
 
-5 directories, 13 files
+5 directories, 12 files
 ```
 
 
-## Usage
+
+## 2. Preparation
+### 2.1 Install zsh
+```
+sudo apt install zsh
+```
+
+### 2.2 Install to use YouCompleteMe
+```
+sudo apt install build-essential cmake vim-nox python3-dev
+sudo apt install mono-complete golang nodejs default-jdk npm
+```
+
+
+
+## 3. Usage
 Type as below line.
 ```
 source setup.sh
 ```
-It will add line into **.bashrc**, **.vimrc**, **.vim/after/syntax/cpp.vim**,
-and copy **latexrc** to **.latexmkrc**
+It will add line into `.bashrc`, `.zshrc`, `.vimrc`, `.vim/after/syntax/cpp.vim`, and copy `latexrc` to `.latexmkrc`.
 
 
-## vim
+## 4. Detail
+### 4.1 vim
 required version > 8.0
 
-### Plugins
-- IndentLinesToggle
-- NERDTree
-- [YouCompleteMe](https://github.com/ycm-core/YouCompleteMe): Auto complete. Recommend to install below to use all functions.
-```
-sudo apt install build-essential cmake vim-nox python3-dev -y
-sudo apt install mono-complete golang nodejs default-jdk npm -y
-```
+#### 4.1.1 Install Plugins
+- Auto pairs: in `auto-pairs` directory
+- IndentLinesToggle: in `indentLint` directory
+- NERDTree: in `nerdtree` directory
+- [YouCompleteMe](https://github.com/ycm-core/YouCompleteMe): in `YouCompleteMe` directory. Auto complete.
 
 
-### Hotkeys
+#### 4.1.2 Hotkeys
 - <F4>: on/off high light search
 - <F5>: on/off line number view
 - <F6>: on/off paste mode

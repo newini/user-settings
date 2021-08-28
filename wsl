@@ -50,7 +50,9 @@ powershell.exe -Command '& tasklist' |
 # ------------------------------------
 #               ssh
 # ------------------------------------
-source /mnt/c/Users/eunchong/OneDrive/workspace/.ssh/ssh.sh
+if [ `hostname` = 'Metisp' -o `hostname` = 'UX310UQ' ]; then
+    source /mnt/c/Users/eunchong/OneDrive/workspace/.ssh/ssh.sh
+fi
 
 
 # ------------------------------------

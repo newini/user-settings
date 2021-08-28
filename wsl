@@ -72,22 +72,6 @@ export PATH=$PATH:/mnt/c/Program\ Files\ \(x86\)/Microsoft/Edge/Application
 alias edge='msedge.exe'
 
 
-#-----------------------------------------------
-#               source ROOT
-#-----------------------------------------------
-if [[ $shell_type =~ '-zsh' ]]; then
-    setopt +o nomatch
-    thisroot=`ls /opt/root/6.*.*-install/bin/thisroot.sh ~/.local/opt/root/6.*.*-install/bin/thisroot.sh 2>/dev/null | sort -V | tail -n 1`
-    setopt -o nomatch
-else
-    thisroot=`ls /opt/root/6.*.*-install/bin/thisroot.sh ~/.local/opt/root/6.*.*-install/bin/thisroot.sh 2>/dev/null | sort -V | tail -n 1`
-fi
-# notice: 2>/dev/null is for suppress error message
-if [ ! -z $thisroot -a -f $thisroot ]; then
-    source $thisroot
-fi
-
-
 # ------------------------------------
 #               Media
 # ------------------------------------

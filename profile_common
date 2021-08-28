@@ -1,15 +1,13 @@
 #!/bin/bash
 #!/bin/zsh
-#
+# profile_common
 # ====================================
 # Author: Eunchong Kim
-# Date: Mar. 2021
+# Date: Aug. 2021
 # Project: user-settings
 # Description: common
 # ====================================
 
-# Get shell type
-shell_type=`ps -p$$ -ocmd=`
 
 #-----------------------------------------------
 #               Variables
@@ -34,14 +32,6 @@ fi
 
 
 #-----------------------------------------------
-#               Source for ATLAS ICEPP/LXPLUS
-#-----------------------------------------------
-result=`uname -a`
-if [[ $result == *"icepp"* ]] || [[ $result == *"lxplus"* ]]; then
-    source $HOME/user-settings/atlas_common
-fi
-
-#-----------------------------------------------
 #                   Alias
 #-----------------------------------------------
 # ls
@@ -61,17 +51,10 @@ alias py='time python3'
 
 
 #-----------------------------------------------
-#                   Macros
-#-----------------------------------------------
-# ROOT TBrowser
-function rb() {
-    root -l $1 -e "new TBrowser"
-}
-
-
-#-----------------------------------------------
 #               Welcome message
 #-----------------------------------------------
+# Get shell type
+shell_type=`ps -p$$ -ocmd=`
 echo    "Hello, $USER! Today is $(date)."
 #echo    "System Info: $(uptime)"
 echo    " _______________________"

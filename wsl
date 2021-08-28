@@ -1,9 +1,9 @@
 #!/bin/bash
 #!/bin/zsh
-#
+# wsl
 # ====================================
 # Author: Eunchong Kim
-# Date: Jan. 2021
+# Date: Aug. 2021
 # Project: user-settings
 # Description: common setting for WSL
 # ====================================
@@ -48,6 +48,12 @@ powershell.exe -Command '& tasklist' |
 
 
 # ------------------------------------
+#               ssh
+# ------------------------------------
+source /mnt/c/Users/eunchong/OneDrive/workspace/.ssh/ssh.sh
+
+
+# ------------------------------------
 #               Alias
 # ------------------------------------
 # Change Directory
@@ -62,9 +68,6 @@ alias open='xdg-open'
 
 # Windows store apps
 # Reference: https://www.tenforums.com/software-apps/57000-method-open-any-windows-10-apps-command-line.html
-# WPS office
-alias wpsoffice="powershell.exe -Command '& explorer.exe shell:AppsFolder\ZhuhaiKingsoftOfficeSoftw.WPSOffice2019_924xes6e8q1tw!WPSOffice2019'"
-# TODO: add parameter of file to open
 
 # Windows program
 # Edge browser

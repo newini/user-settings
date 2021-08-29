@@ -9,7 +9,8 @@
 # ====================================
 
 
-this_win_username=`powershell.exe '$env:UserName'`
+#WINDOWS_USERNAME=`powershell.exe '$env:UserName'` # This not work. It includes 'ctrl+m'
+WINDOWS_USERNAME=`wslpath "$(wslvar USERNAME)"`
 
 
 # ------------------------------------
@@ -51,8 +52,8 @@ powershell.exe -Command '& tasklist' |
 #               Alias
 # ------------------------------------
 # Change Directory
-alias onedrive="cd /mnt/c/Users/$this_win_username/OneDrive/workspace"
-alias download="cd /mnt/c/Users/$this_win_username/Downloads"
+alias onedrive="cd /mnt/c/Users/${WINDOWS_USERNAME}/OneDrive"
+alias downloads="cd /mnt/c/Users/${WINDOWS_USERNAME}/Downloads"
 
 # mkdir option
 alias mkdir='mkdir -m 755'
@@ -80,7 +81,7 @@ export PULSE_SERVER=tcp:localhost
 #       Windows terminal setting
 # ------------------------------------
 function wtsetting() {
-    setting_path=/mnt/c/Users/${this_win_username}/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json
+    setting_path=/mnt/c/Users/${WINDOWS_USERNAME}/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json
     vim $setting_path
     vimdiff $setting_path $HOME/user-settings/windows-terminal/.
 }

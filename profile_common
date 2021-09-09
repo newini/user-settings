@@ -49,6 +49,9 @@ alias grep='grep --exclude-dir=".git" --color'
 # Python
 alias py='time python3'
 
+# Jupyter lab
+alias jl='jupyter lab --no-browser'
+
 
 #-----------------------------------------------
 #                   npm

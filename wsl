@@ -67,6 +67,8 @@ alias mkdir='mkdir -m 755'
 alias open='xdg-open'
 
 # Windows program
+# Python on powershell
+alias ppy='powershell.exe python'
 # Edge browser
 export PATH=$PATH:/mnt/c/Program\ Files\ \(x86\)/Microsoft/Edge/Application
 alias edge='msedge.exe'

@@ -100,7 +100,7 @@ function wtsetting() {
 if [ `hostname` = 'Metisp' -o `hostname` = 'UX310UQ' ]; then
     # ------------------------------------
     #           ssh alias
-    source /mnt/c/Users/eunchong/OneDrive/workspace/.ssh/ssh.sh
+    source /mnt/c/Users/${WINDOWS_USERNAME}/OneDrive/workspace/.ssh/ssh.sh
 
     # ------------------------------------
     #           Syncthing

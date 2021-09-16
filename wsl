@@ -69,6 +69,7 @@ alias open='xdg-open'
 # Windows program
 # Python on powershell
 alias ppy='powershell.exe python'
+alias ppyjl='powershell.exe python -m jupyterlab --no-browser'
 # Edge browser
 export PATH=$PATH:/mnt/c/Program\ Files\ \(x86\)/Microsoft/Edge/Application
 alias edge='msedge.exe'

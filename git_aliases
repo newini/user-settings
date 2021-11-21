@@ -28,7 +28,7 @@ alias gla="git log --graph --abbrev-commit --decorate --format=format:'%C(bold b
 # ------------------------------------
 #               macro
 # ------------------------------------
-function gf () {
+function gfp () {
     echo "git fetch $1 && git remote prune $1"
     git fetch $1 && git remote prune $1
 }

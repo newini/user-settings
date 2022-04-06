@@ -40,7 +40,7 @@ EOT
 
 # ================================
 #           Latexmk
-cp latexmkrc ../.latexmkrc
+# cp latexmkrc ../.latexmkrc
 
 
 # ================================

@@ -12,8 +12,10 @@
 #-----------------------------------------------
 #               Variables
 #-----------------------------------------------
+# add sbin
+export PATH=$PATH:/usr/sbin:/sbin
 # Add .local to PATH
-export PATH=~/.local/bin:$PATH
+export PATH=$PATH:~/.local/bin
 
 # Set default editor
 export EDITOR='vim'

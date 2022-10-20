@@ -58,7 +58,7 @@ function wtsetting() {
 # ------------------------------------
 #       Only for Metisp or UX310UQ
 # ------------------------------------
-if [ `hostname` = 'Metisp' -o `hostname` = 'UX310UQ' ]; then
+if [ `hostname` = 'MetisP' -o `hostname` = 'UX310UQ' ]; then
     # ------------------------------------
     #           ssh alias
     source /mnt/c/Users/${WINDOWS_USERNAME}/OneDrive/workspace/.ssh/ssh.sh

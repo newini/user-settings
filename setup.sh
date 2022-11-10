@@ -1,44 +1,42 @@
 #!/bin/bash
 #
-# Type "source setup.sh" on "user-settings" dir!
-#
 # Created by Eunchong Kim
-# Aug., 2020
+# Nov. 2022
 #
 
-dirctory_name=user-settings
+
 
 # ================================
 #           bashrc
-cat <<EOT >> ../.bashrc
+cat <<EOT >> ~/.bashrc
 
 # bashrc user setting
 # Encircle 'if [ "\$SSH_TTY" != ""  ]; then; fi', if cannot scp
-source $HOME/$dirctory_name/bashrc
+source $PWD/bashrc
 EOT
 
 
 # ================================
 #           zshrc
-cat <<EOT >> ../.zshrc
+cat <<EOT >> ~/.zshrc
 
 # zshrc user setting
 # Encircle 'if [ "\$SSH_TTY" != ""  ]; then; fi', if cannot scp
-source $HOME/$dirctory_name/zshrc
+source $PWD/zshrc
 EOT
 
 
 # ================================
 #           Latexmk
-# cp latexmkrc ../.latexmkrc
+# cp latexmkrc ~/.latexmkrc
 
 
 # ================================
 #           Vim
 # vim settings
-echo "source \$HOME/$dirctory_name/vimrc" > ../.vimrc
+echo "source \$PWD/vimrc" > ~/.vimrc
 # Copy file type plugin & cpp syntax
-cp -rT vim ../.vim
+cp -rT vim ~/.vim
 
 
 # ---------------------

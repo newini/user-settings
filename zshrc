@@ -12,10 +12,10 @@
 #                   Basic
 #-----------------------------------------------
 # zsh color
-    export PROMPT="%F{cyan}%n%F{white}@%F{green}%m:%F{yellow}%1~%F{white}$ "
+export PROMPT="%F{cyan}%n%F{white}@%F{green}%m:%F{yellow}%1~%F{white}$ "
 
 # Display if go shell from vim
-    [[ -n "$VIMRUNTIME" ]] && PROMPT="(VIM): "${PROMPT}
+[[ -n "$VIMRUNTIME" ]] && PROMPT="(VIM): "${PROMPT}
 
 
 #-----------------------------------------------
@@ -28,4 +28,4 @@ fi
 #-----------------------------------------------
 #           Disable share history
 #-----------------------------------------------
-    unsetopt share_history
+unsetopt share_history

@@ -46,16 +46,6 @@ export PULSE_SERVER=tcp:localhost
 
 
 # ------------------------------------
-#       Windows terminal setting
-# ------------------------------------
-function wtsetting() {
-    setting_path=/mnt/c/Users/${WINDOWS_USERNAME}/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json
-    vim $setting_path
-    vimdiff $setting_path $HOME/user-settings/windows-terminal/.
-}
-
-
-# ------------------------------------
 #       Only for Metisp or UX310UQ
 # ------------------------------------
 if [ `hostname` = 'MetisP' -o `hostname` = 'UX310UQ' ]; then

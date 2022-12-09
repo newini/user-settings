@@ -4,5 +4,5 @@ pandas
 ipywidgets
 jupyterlab
 jupyterlab-kite
-tensorflow==2.9.0
+tensorflow==2.9.3
 optuna

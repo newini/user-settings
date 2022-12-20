@@ -15,7 +15,7 @@ cat <<EOT >> ~/.bashrc
 
 # bashrc user setting
 # Encircle 'if [ "\$SSH_TTY" != ""  ]; then; fi', if cannot scp
-source $PWD/bashrc
+source $HOME/user-settings/bashrc
 EOT
 echo -e ''
 
@@ -26,7 +26,7 @@ cat <<EOT >> ~/.zshrc
 
 # zshrc user setting
 # Encircle 'if [ "\$SSH_TTY" != ""  ]; then; fi', if cannot scp
-source $PWD/zshrc
+source $HOME/user-settings/zshrc
 EOT
 echo -e ''
 

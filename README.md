@@ -33,13 +33,12 @@ tree
 ## 2. Preparation
 ### 2.1 Install zsh
 ```
-sudo apt install zsh
+sudo apt install -y zsh
 ```
 
 ### 2.2 Install to use YouCompleteMe
 ```
-sudo apt install build-essential cmake vim-nox python3-dev
-sudo apt install mono-complete golang nodejs default-jdk npm
+sudo apt install -y build-essential cmake vim-nox python3-dev mono-complete golang nodejs default-jdk npm
 ```
 
 

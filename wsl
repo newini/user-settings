@@ -9,8 +9,8 @@
 # ====================================
 
 
-#WINDOWS_USERNAME=`powershell.exe '$env:UserName'` # This not work. It includes 'ctrl+m'
-WINDOWS_USERNAME=`wslpath "$(wslvar USERNAME)"`
+WINDOWS_USERNAME=`powershell.exe '$env:UserName'`
+WINDOWS_USERNAME=${WINDOWS_USERNAME/%$'\r'/} # remove ^M (ctrl+m; carriage Return)
 
 
 # ------------------------------------

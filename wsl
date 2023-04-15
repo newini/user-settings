@@ -12,9 +12,10 @@
 
 # ==========================================================
 # Windows command
-# If systemcmd is enabled, windows command is missing
+# If systemd is enabled, cannot run windows exe
 # ==========================================================
-if [ -z "`powershell.exe`" ]; then
+if [ -z "`powershell.exe '$env:UserName'`" ]; then
+    echo -e "Cannot run .exe, disable cli"
     sudo update-binfmts --disable cli
 fi
 WINDOWS_USERNAME=`powershell.exe '$env:UserName'`

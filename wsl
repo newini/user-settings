@@ -3,19 +3,27 @@
 # wsl
 # ====================================
 # Author: Eunchong Kim
-# Date: 2022-01
+# Date: 2023-04
 # Project: user-settings
 # Description: common setting for WSL
 # ====================================
 
 
+
+# ==========================================================
+# Windows command
+# If systemcmd is enabled, windows command is missing
+# ==========================================================
+if [ -z "`powershell.exe`" ]; then
+    sudo update-binfmts --disable cli
+fi
 WINDOWS_USERNAME=`powershell.exe '$env:UserName'`
 WINDOWS_USERNAME=${WINDOWS_USERNAME/%$'\r'/} # remove ^M (ctrl+m; carriage Return)
 
 
-# ------------------------------------
-#               Alias
-# ------------------------------------
+# ==========================================================
+# Alias for WSL
+# ==========================================================
 # Change Directory
 alias onedrive="cd /mnt/c/Users/${WINDOWS_USERNAME}/OneDrive"
 alias downloads="cd /mnt/c/Users/${WINDOWS_USERNAME}/Downloads"
@@ -38,16 +46,16 @@ alias edge='msedge.exe'
 # Reference: https://www.tenforums.com/software-apps/57000-method-open-any-windows-10-apps-command-line.html
 
 
-# ------------------------------------
-#               Media
-# ------------------------------------
+# ==========================================================
+# Play media on WSL
+# ==========================================================
 # audio (may not work)
 export PULSE_SERVER=tcp:localhost
 
 
-# ------------------------------------
-#       Only for Metisp or UX310UQ
-# ------------------------------------
+# ==========================================================
+# Syncthing for Metisp or UX310UQ
+# ==========================================================
 if [ `hostname` = 'MetisP' -o `hostname` = 'UX310UQ' ]; then
     # ------------------------------------
     #           ssh alias
@@ -69,3 +77,5 @@ if [ `hostname` = 'MetisP' -o `hostname` = 'UX310UQ' ]; then
         echo -e "[Info] Syncthing is running."
     fi
 fi
+
+

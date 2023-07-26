@@ -3,7 +3,7 @@
 # wsl
 # ====================================
 # Author: Eunchong Kim
-# Date: 2023-04
+# Date: 2023-06
 # Project: user-settings
 # Description: common setting for WSL
 # ====================================
@@ -46,6 +46,10 @@ alias edge='msedge.exe'
 # Windows store apps
 # Reference: https://www.tenforums.com/software-apps/57000-method-open-any-windows-10-apps-command-line.html
 
+# Clear cache
+# https://snippets.azaky.io/free-cache-memory-on-ubuntu-on-wsl2
+alias freecachemem='sync && echo 3 | sudo tee /proc/sys/vm/drop_caches > /dev/null'
+
 
 # ==========================================================
 # Play media on WSL
@@ -78,5 +82,3 @@ if [ `hostname` = 'MetisP' -o `hostname` = 'UX310UQ' ]; then
         echo -e "[Info] Syncthing is running."
     fi
 fi
-
-

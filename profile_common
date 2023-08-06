@@ -59,6 +59,9 @@ gprjl(){
     poetry run jupyter-lab --no-browser --notebook-dir=~ $@
 }
 
+# Activate poetry env
+alias activate='source $(poetry env info --path)/bin/activate'
+
 
 #-----------------------------------------------
 #                   npm

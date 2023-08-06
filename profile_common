@@ -53,6 +53,11 @@ alias py='time python3'
 
 # Jupyter lab
 alias jl='jupyter lab --no-browser'
+alias prjl='poetry run jupyter lab --no-browser'
+gprjl(){
+    cd ~/workspace/poetry-env
+    poetry run jupyter-lab --no-browser --notebook-dir=~ $@
+}
 
 
 #-----------------------------------------------

@@ -14,10 +14,10 @@
 # Windows command
 # If systemd is enabled, cannot run windows exe
 # ==========================================================
-if [ -z "`powershell.exe '$env:UserName'`" ]; then
-    echo -e "Cannot run .exe, disable cli"
-    sudo update-binfmts --disable cli
-fi
+#if [ -z "`powershell.exe '$env:UserName'`" ]; then
+#    echo -e "Cannot run .exe, disable cli"
+#    sudo update-binfmts --disable cli
+#fi
 WINDOWS_USERNAME=`powershell.exe '$env:UserName'`
 WINDOWS_USERNAME=${WINDOWS_USERNAME/%$'\r'/} # remove ^M (ctrl+m; carriage Return)
 

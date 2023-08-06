@@ -57,7 +57,7 @@ echo -e ''
 
 # Auto Pairs
 # https://github.com/jiangmiao/auto-pairs
-git clone git://github.com/jiangmiao/auto-pairs.git ~/.vim/pack/vendor/start/auto-pairs
+git clone https://github.com/jiangmiao/auto-pairs.git ~/.vim/pack/vendor/start/auto-pairs
 echo -e ''
 
 # You Complete Me

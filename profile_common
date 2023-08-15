@@ -52,8 +52,8 @@ alias grep='grep --exclude-dir=".git" --color'
 alias py='time python3'
 
 # Jupyter lab
-alias jl='jupyter lab --no-browser'
-alias prjl='poetry run jupyter lab --no-browser'
+alias jl='jupyter lab --no-browser --notebook-dir=~'
+alias prjl='poetry run jupyter lab --no-browser --notebook-dir=~'
 gprjl(){
     cd ~/workspace/poetry-env
     poetry run jupyter-lab --no-browser --notebook-dir=~ $@

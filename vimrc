@@ -135,3 +135,7 @@ endif
     autocmd Filetype json let g:indentLine_setConceal = 0 " Must disable indentline for JSON file
 
     let g:ycm_min_num_of_chars_for_completion = 3 " Minimum characters for auto completion
+
+    " Ale
+    " 保存時のみ実行する
+    let g:ale_lint_on_text_changed = 0

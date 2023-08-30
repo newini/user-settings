@@ -47,25 +47,29 @@ echo -e ''
 
 # ---------------------
 #       Vim packages
+# ALe
+mkdir -p ~/.vim/pack/git-plugins/start
+git clone --depth 1 https://github.com/dense-analysis/ale.git ~/.vim/pack/git-plugins/start/ale
+
 # NERDTree
-git clone https://github.com/preservim/nerdtree.git ~/.vim/pack/vendor/start/nerdtree
+git clone https://github.com/preservim/nerdtree.git ~/.vim/pack/git-plugins/start/nerdtree
 echo -e ''
 
 # IndentLine
-git clone https://github.com/Yggdroot/indentLine.git ~/.vim/pack/vendor/start/indentLint
+git clone https://github.com/Yggdroot/indentLine.git ~/.vim/pack/git-plugins/start/indentLint
 echo -e ''
 
 # Auto Pairs
 # https://github.com/jiangmiao/auto-pairs
-git clone https://github.com/jiangmiao/auto-pairs.git ~/.vim/pack/vendor/start/auto-pairs
+git clone https://github.com/jiangmiao/auto-pairs.git ~/.vim/pack/git-plugins/start/auto-pairs
 echo -e ''
 
 # You Complete Me
 # If compile failed, install 'sudo apt install build-essential cmake vim-nox python3-dev'
 # https://github.com/ycm-core/YouCompleteMe/#linux-64-bit
-git clone --recurse-submodules https://github.com/ycm-core/YouCompleteMe.git  ~/.vim/pack/vendor/start/YouCompleteMe
+git clone --recurse-submodules https://github.com/ycm-core/YouCompleteMe.git  ~/.vim/pack/git-plugins/start/YouCompleteMe
 echo -e ''
-cd ~/.vim/pack/vendor/start/YouCompleteMe
+cd ~/.vim/pack/git-plugins/start/YouCompleteMe
 echo -e ''
 python3 install.py
 echo -e ''

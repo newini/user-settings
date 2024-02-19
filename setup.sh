@@ -39,7 +39,7 @@ echo -e ''
 # ================================
 #           Vim
 # vim settings
-echo "source \$PWD/vimrc" > ~/.vimrc
+echo "source $PWD/vimrc" > ~/.vimrc
 # Copy file type plugin & cpp syntax
 cp -rT vim ~/.vim
 echo -e ''

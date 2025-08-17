@@ -61,24 +61,24 @@ export PULSE_SERVER=tcp:localhost
 # ==========================================================
 # Syncthing for Metisp or UX310UQ
 # ==========================================================
-if [ `hostname` = 'MetisP' -o `hostname` = 'UX310UQ' ]; then
-    # ------------------------------------
-    #           ssh alias
-    source /mnt/c/Users/${WINDOWS_USERNAME}/OneDrive/workspace/.ssh/ssh.sh
-
-    # ------------------------------------
-    #           Syncthing
-    # Check syncthing running. if not, start to run
-    if [ -z "`pgrep syncthing`" ]; then # If syncthing is not running
-        echo -e "[Warning] Syncthing is not running. Starting Syncthing ..."
-        if [ -n "`syncthing -help 2>/dev/null`" ]; then # If synching -help is not empty
-            syncthing -no-browser -logfile=".syncthing.log" -logflags="3" > /tmp/syncthing.out &
-        fi
-    fi
-    # Check again
-    if [ -z "`pgrep syncthing`" ]; then # If syncthing is not running
-        echo -e "[Warning] Syncthing is still not running! Check yourself."
-    else
-        echo -e "[Info] Syncthing is running."
-    fi
-fi
+# if [ `hostname` = 'MetisP' -o `hostname` = 'UX310UQ' ]; then
+#     # ------------------------------------
+#     #           ssh alias
+#     source /mnt/c/Users/${WINDOWS_USERNAME}/OneDrive/workspace/.ssh/ssh.sh
+#
+#     # ------------------------------------
+#     #           Syncthing
+#     # Check syncthing running. if not, start to run
+#     if [ -z "`pgrep syncthing`" ]; then # If syncthing is not running
+#         echo -e "[Warning] Syncthing is not running. Starting Syncthing ..."
+#         if [ -n "`syncthing -help 2>/dev/null`" ]; then # If synching -help is not empty
+#             syncthing -no-browser -logfile=".syncthing.log" -logflags="3" > /tmp/syncthing.out &
+#         fi
+#     fi
+#     # Check again
+#     if [ -z "`pgrep syncthing`" ]; then # If syncthing is not running
+#         echo -e "[Warning] Syncthing is still not running! Check yourself."
+#     else
+#         echo -e "[Info] Syncthing is running."
+#     fi
+# fi
